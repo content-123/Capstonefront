@@ -30,6 +30,7 @@ import {  Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import EmailForm from './components/EmailForm';
 import Register from './components/Register';
+import ProtectedRoute from './components/ProtectedRoute';
 // import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -38,8 +39,8 @@ function App() {
      
         <Routes>
           <Route path="/" element={<Login />} />
-          {/* <ProtectedRoute path="/send-email" element={<EmailForm />} ></ProtectedRoute> */}
-          <Route path="/send-email" element={<EmailForm />} ></Route>
+          <ProtectedRoute path="/send-email" element={<EmailForm />} ></ProtectedRoute>
+          <Route path="/send-email" element={<ProtectedRoute><EmailForm /></ProtectedRoute>} ></Route>
           {/* <Route path="/send-email" element={<EmailForm />} /> */}
           <Route path="/register" element={<Register />} />
         </Routes>
