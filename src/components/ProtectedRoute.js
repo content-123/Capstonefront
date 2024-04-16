@@ -1,5 +1,5 @@
-import React, { Children } from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import React from 'react';
+import {  Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({children}) => {
   // Retrieve token from localStorage
@@ -8,11 +8,11 @@ const ProtectedRoute = ({children}) => {
   // Check if token exists and is not expired
   const isAuthenticated = token ? true : false;
 
- if (token){
+ if (isAuthenticated){
   return children 
   
  }else{
- <Navigate to="/" />
+ return <Navigate to="/" />
  }
 };
 
