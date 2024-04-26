@@ -27,7 +27,7 @@ const Register = () => {
 
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const response = await axios.post('http://localhost:5000/register', {
+      const response = await axios.post('https://capstone-3-jcg9.onrender.com/register', {
         email: values.email,
         password: values.password,
       });
